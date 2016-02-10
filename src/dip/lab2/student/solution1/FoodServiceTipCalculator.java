@@ -9,10 +9,15 @@ import dip.lab2.*;
  *
  * @author your name goes here
  */
-public class FoodServiceTipCalculator extends TipCalc {
+public class FoodServiceTipCalculator implements TipCalculator {
+    // need to un-lower case the var names 
+      private static  double MIN_BILL = 0.00;
+    private static double GOOD_RATE = 0.20;
+    private static  double FAIR_RATE = 0.15;
+    private static  double POOR_RATE = 0.10;
  
     private static final String BILL_ENTRY_ERR =
-            "Error: bill must be greater than or equal to " + getMIN_BILL();
+            "Error: bill must be greater than or equal to " + MIN_BILL;
 
 
     private double bill;
@@ -30,13 +35,13 @@ public class FoodServiceTipCalculator extends TipCalc {
 
         switch(serviceQuality) {
             case GOOD:
-                tip = bill * getGOOD_RATE();
+                tip = bill * GOOD_RATE;
                 break;
             case FAIR:
-                tip = bill * getFAIR_RATE();
+                tip = bill * FAIR_RATE;
                 break;
             case POOR:
-                tip = bill * getPOOR_RATE();
+                tip = bill * POOR_RATE;
                 break;
         }
 
@@ -44,19 +49,19 @@ public class FoodServiceTipCalculator extends TipCalc {
     }
 
     public final void setBill(double billAmt) {
-        if(billAmt < getMIN_BILL()) {
+        if(billAmt < MIN_BILL) {
             throw new IllegalArgumentException(BILL_ENTRY_ERR);
         }
         bill = billAmt;
     }
 
-    @Override
+  
     public final void setServiceRating(ServiceQuality q) {
         // No need to validate because enums provide type safety!
         serviceQuality = q;
     }
 
-    @Override
+   
     public ServiceQuality getServiceQuality() {
         return serviceQuality;
     }
