@@ -7,7 +7,7 @@ package dip.lab1.student.solution1;
  *
  * @Jennifer
  */
-public class SalariedEmployee extends Employee {
+public class SalariedEmployee implements Employee {
 
     private double annualSalary;
     private double annualBonus;

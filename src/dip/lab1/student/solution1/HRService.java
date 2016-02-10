@@ -25,15 +25,8 @@ public class HRService {
     /**
      * Alternatively to the above, we could use an enum. Does this improve
      * type safety? . 
+     * @param e
      */
-//    public enum WageType {
-//        SALARIED,
-//        HOURLY
-//    }
-//
-//    private static final String ERROR_MSG =
-//            "Cannot get annual wages because no valid employee type provided";
-//    private static final String ERROR_TITLE = "Employee Type Unknown";
 
     public double getAnnualCompensationForEmployee(Employee e)
     {
@@ -41,4 +34,6 @@ public class HRService {
   annualCompensation = e.getAnnualWages();
         return annualCompensation;
     }
+    
+    
 }

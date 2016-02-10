@@ -7,7 +7,7 @@ package dip.lab1.student.solution1;
  *
  * @Jennifer
  */
-public class HourlyEmployee extends Employee {
+public class HourlyEmployee implements Employee {
 
     private double hourlyRate;
     private double totalHrsForYear;
